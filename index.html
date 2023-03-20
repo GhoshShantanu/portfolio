@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='main.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+</head>
+<body>
+    <div class="secheader">
+        <div class="container">
+        <div class="row">
+        <div class="col-6">
+        <div class="logo"><a href=""><img src="images/logo.png" alt=""></a></div>
+        </div>
+        <div class="col-6">
+        <input type="checkbox" name="" id="" class="check">
+        <ul class="menu-items">
+          <li><a href="" target="_blank">HOME</a></li>
+          <li><a href="#aboutme" target="_blank">ABOUT ME</a></li>
+          <li><a href="#work" target="_blank">MY WORK</a></li>
+          <li><a href="#contact" target="_blank">CONTACT ME</a></li>
+          <div class="btn"><a href="https://drive.google.com/uc?export=download&id=1VRpSDKa2cBzCIoNxmV7xwnFGllruJoXd">Download CV</a></div>
+        </ul>
+        <div class="ham-menu">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="secbanner">
+    <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+            <h4>Hello,my name is</h4>
+            <h1>Shantanu <span>Ghosh</span></h1>
+            <div class="wrapper">
+                <div class="centeredBox"> 
+                    <span id="typewriter" data-array=""></span>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Enter your mail" class="email">
+                <input type="submit" value="Lets Start" class="submit">
+            </form>
+           </div>
+           <div class="col-md-6"><div class="img"><img src="./images/pngwing.com.png" alt=""></div></div>
+        </div>
+    </div>
+    </div>
+
+<script>
+
+var typeWriterElement = document.getElementById('typewriter');
+
+var textArray = ["I am a Web Developer.","I am a Web Designer.","I am a Graphic Designer.","I love Coding."];
+
+function delWriter(text, i, cb) {
+	if (i >= 0 ) {
+		typeWriterElement.innerHTML = text.substring(0, i--);
+
+ 		var rndBack = 10 + Math.random() * 100;
+		setTimeout(function() {
+			delWriter(text, i, cb);
+		},rndBack); 
+	} else if (typeof cb == 'function') {
+		setTimeout(cb,1000);
+	}
+};
+
+function typeWriter(text, i, cb) {
+	if ( i < text.length+1 ) {
+		typeWriterElement.innerHTML = text.substring(0, i++);
+		var rndTyping = 250 - Math.random() * 100;
+		setTimeout( function () { 
+			typeWriter(text, i++, cb)
+		},rndTyping);
+	} else if (i === text.length+1) {
+		setTimeout( function () {
+			delWriter(text, i, cb)
+		},1000);
+	}
+};
+
+function StartWriter(i) {
+	if (typeof textArray[i] == "undefined") {
+		setTimeout( function () {
+			StartWriter(0)
+		},1000);
+	} else if(i < textArray[i].length+1) {
+		typeWriter(textArray[i], 0, function () {
+			StartWriter(i+1);
+		});
+	}  
+};
+
+setTimeout( function () {
+	StartWriter(0);
+},1000);
+</script>
+
+
+
+    <div class="secabout_me" id="aboutme">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="img">
+            <img src="./images/pngwing.com (2).png" alt="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2>About Me</h2>
+            <h3>Devoloper <span>& Designer</span></h3>
+            <p>I am a front-end web devoloper.I can provide clean code<br>and pixel perfect design.I can also make the website more<br>& more interactive with web animation.A responsive design<br>makes your website accessable to all users,regaldless of<br>their devices.I am a front-end web devoloper.I can provide<br>clean code and pixel perfect design.I can also make the website<br>more & more interactive with web animation.A responsive design<br>makes your website accessable to all users,regaldless of<br>their devices.</p>
+            <div class="btn"><a href="https://drive.google.com/uc?export=download&id=1VRpSDKa2cBzCIoNxmV7xwnFGllruJoXd">Download CV</a></div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="secmy_work" id="work">
+    <div class="container">
+        <h2>My Work</h2>
+        <div class="row">
+        <div class="col-md-4">
+            <div class="product_box">
+            <i class="fa-solid fa-pen-nib"></i>
+            <div class="product_heading"><h3>Web Design</h3></div>
+            <div class="product_info"><p>Every website should be built with <br>two primary goals: Firstly, it needs <br>to work across all devices.Secondly, <br> it needs to be as fast as possible</p></div>
+            <div class="btn" id="container"><a href="https://www.behance.net/shantanughosh3">My Work</a></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product_box">
+            <i class="fa-solid fa-code"></i>
+            <div class="product_heading"><h3>Web Devolopment</h3></div>
+            <div class="product_info"><p>Every website should be built with <br>two primary goals: Firstly, it needs <br>to work across all devices.Secondly, <br> it needs to be as fast as possible</p></div>
+            <div class="websites">
+            <h3>Here are some links</h3>
+              <a href="https://ghoshshantanu.github.io/lovelyweddding/"><p>https://ghoshshantanu.github.io/lovelyweddding/</p></a>
+              <a href="https://ghoshshantanu.github.io/ftage/"><p>https://ghoshshantanu.github.io/ftage/</p></a>
+              <a href="https://ghoshshantanu.github.io/fish/"><p>https://ghoshshantanu.github.io/fish/</p></a>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product_box">
+            <i class="fa-solid fa-paintbrush"></i>
+            <div class="product_heading"><h3>Graphic Design</h3></div>
+            <div class="product_info"><p>Every website should be built with <br>two primary goals: Firstly, it needs <br>to work across all devices.Secondly, <br> it needs to be as fast as possible</p></div>
+            <div class="btn" id="container"><a href="https://www.behance.net/shantanughosh3">My Work</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="websites">
+        <div class="row">
+            <div class="col-md-12">
+            <h3>Here are some links</h3>
+        <a href="https://ghoshshantanu.github.io/lovelyweddding/"><p>https://ghoshshantanu.github.io/lovelyweddding/</p></a>
+        <a href="https://ghoshshantanu.github.io/ftage/"><p>https://ghoshshantanu.github.io/ftage/</p></a>
+        <a href="https://ghoshshantanu.github.io/fish/"><p>https://ghoshshantanu.github.io/fish/</p></a>
+           </div>
+        </div>
+    </div> -->
+    </div>
+    </div>
+
+
+    <div class="sechire_me">
+    <div class="container">
+        <h2>Let Me Get You A Beautiful  Website</h2>
+        <div class="btn" id="container"><a href="">Hire Me</a></div>
+    </div>
+    </div>
+
+
+    <div class="secsocial_media" id="contact">
+    <div class="container">
+        <h2>Shantanu Ghosh</h2>
+        <p>For more HTML,CSS and Coding please click on the link below and follow me on Facebook</p>
+        <ul>
+            <li><a href=""><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a href="https://wa.me/7001294334?text=Hello%20I'm%20Shantanu"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+        </ul>
+    </div>
+    </div>
+
+
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-3">
+            <ul>
+                <li><a href=""><img src="images/Group 1.png" alt=""></a></li>
+                <li><p>For more HTML,CSS and Coding<br>please click on the link below and<br>follow me on Facebook</p></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Product & Services</h6>
+            <ul>
+                <li><a href="">Web Devolopment</a></li>
+                <li><a href="">Web Design</a></li>
+                <li><a href="https://www.behance.net/shantanughosh3">Graphic Design</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Quick Links</h6>
+           <ul>
+             <li><a href="#home">Home</a></li>
+             <li><a href="#aboutme">About Me</a></li>
+             <li><a href="#work">My Work</a></li>
+             <li><a href="#contact">Contact Me</a></li>
+           </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Contact Us</h6>
+          <ul>
+            <li><a href="https://goo.gl/maps/Kf145j4uUpugBjmF9"><i class="fa-solid fa-location-crosshairs"></i></a></li>
+            <li><a href="mailto: shantanug210@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+            <li><a href="tel: 7001294336"><i class="fa-solid fa-phone-volume"></i></a></li>
+          </ul>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>
